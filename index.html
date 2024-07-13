@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scholarship Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #4e2c7a;
+            padding: 10px;
+            color: white;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+            position: relative;
+        }
+        .header img {
+            position: absolute;
+            left: 20px;
+            top: 10px;
+            width: 60px;
+            height: 60px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin: 0;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="date"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="file"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 5px 0 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .radio-group {
+            display: flex;
+            align-items: center;
+        }
+        .radio-group label {
+            margin-left: 5px;
+            margin-right: 15px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h3 {
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnMMI-D2v5nL6QBucaeE-GslHlaLcHtDuO6bWhwQ_AxQK_wUZPfK4lYoYL&s=10" alt="ICAI Logo">
+            <h2>THE INSTITUTE OF CHARTERED ACCOUNTANTS OF INDIA</h2>
+            <p>(SETUP BY AN ACT OF PARLIAMENT)</p>
+        </div>
+        <form action="page2.html" method="post" enctype="multipart/form-data">
+            <div class="section">
+                <h3>Scholarship Registration Form</h3>
+                <label for="name">*Student Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="dob">*Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+
+                <label for="srn">*SRN No.:</label>
+                <div style="display: flex; align-items: center;">
+                    <select id="srn-prefix" name="srn-prefix" required>
+                        <option value="WRO">WRO</option>
+                        <option value="SRO">SRO</option>
+                        <option value="CRO">CRO</option>
+                    </select>
+                    <input type="text" id="srn" name="srn" placeholder="Enter remaining part of SRN" required style="flex: 1; margin-left: 10px;">
+                </div>
+
+                <label for="mobile">*Mobile No.:</label>
+                <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
+
+                <label for="email">*Email ID:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label>Is your yearly income lower than 300,000?</label>
+                <div class="radio-group">
+                    <input type="radio" id="income_yes" name="income" value="yes" required>
+                    <label for="income_yes">Yes</label>
+                    <input type="radio" id="income_no" name="income" value="no" required>
+                    <label for="income_no">No</label>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Upload Documents</h3>
+                <label for="certificate">*Upload 12th Passing Certificate:</label>
+                <input type="file" id="certificate" name="certificate" accept=".pdf,.jpg,.jpeg,.png" required>
+            </div>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
